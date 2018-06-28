@@ -33,13 +33,30 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Dashboard</span></a></li>
+            <li><a href="#"><i class='fa fa-link'></i> <span>Mi Cuenta</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Gestión Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                    <li><a href="{{url('/crearusuario') }}">Crear Usuario</a></li>
+                    <li><a href="#">Listar Usuarios</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Gestión Cursos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('/crearcurso') }}">Crear Curso</a></li>
+                    <li><a href="#">Listar Cursos</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Gestión Eduación</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="">Gestion Temas</a></li>
+                    <li><a href="{{url('/crearpregunta') }}">Crear Pregunta</a></li>
+                    <li><a href="#">Listar Preguntas</a></li>
+                    <li><a href="{{url('/crearrespuesta') }}">Crear Respuestas</a></li>
+                    <li><a href="#">Listar Respuesta</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

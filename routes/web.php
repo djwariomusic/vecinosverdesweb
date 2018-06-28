@@ -14,8 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
+
 
 Route::group(['middleware' => 'auth'], function () {
+
+  Route::get('/crearusuario', 'UserController@index');
+  Route::get('/crearcurso', 'CourseController@index');
+  Route::get('/crearpregunta', 'AnswerController@index');
+  Route::get('/crearrespuesta', 'QuestionController@index');
+
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
 //    });
