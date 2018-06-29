@@ -16,6 +16,10 @@ class UserController extends Controller
         return view('adminlte::createuser');
     }
 
+    public function acount()
+    {
+        return view('adminlte::myacount');
+    }
     /**
      * Show the form for creating a new resource.
      *

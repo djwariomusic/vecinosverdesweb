@@ -20,10 +20,14 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
 
+  Route::get('/micuenta', 'UserController@acount');
   Route::get('/crearusuario', 'UserController@index');
   Route::get('/crearcurso', 'CourseController@index');
   Route::get('/crearpregunta', 'AnswerController@index');
   Route::get('/crearrespuesta', 'QuestionController@index');
+
+  Route::get('/miscursos', 'CourseController@index');
+  Route::get('/tema', 'LessonController@index');
 
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware

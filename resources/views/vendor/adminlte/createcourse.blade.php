@@ -44,12 +44,12 @@
 	                <!-- input states -->
 	                <div class="form-group has-success">
 	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Curso</label>
-	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo">
+	                  <input type="text" class="form-control" id="titlecurso" placeholder="Ingresar Titulo">
 	                </div>
 
 									<div class="form-group has-success">
 										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Descripción Curso</label>
-										<textarea class="form-control" rows="9" id="inputSuccess" placeholder="Descripción Ingresar Titulo"> </textarea>
+										<textarea class="form-control" rows="9" id="titledescripcion" placeholder="Descripción Ingresar Titulo"> </textarea>
 									</div>
 	                <button type="submit" class="btn btn-info pull-right">Sign in</button>
 	              </form>

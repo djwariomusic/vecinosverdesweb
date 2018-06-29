@@ -34,7 +34,7 @@
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Dashboard</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Mi Cuenta</span></a></li>
+            <li><a href="{{url('/micuenta')}}"><i class='fa fa-link'></i> <span>Mi Cuenta</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestión Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -59,6 +59,26 @@
                     <li><a href="#">Listar Respuesta</a></li>
                 </ul>
             </li>
+            <li><a href="{{url('/miscursos')}}"><i class='fa fa-link'></i> <span>Formación</span></a></li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Noticias Información</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="">Horario Empresas de Aseo</a></li>
+                    <li><a href="{{url('/crearpregunta') }}">Ubicación Centro Reciclaje</a></li>
+                    <li><a href="#">Contactar Reciclador</a></li>
+                    <li><a href="{{url('/crearrespuesta') }}">Selección Basuras Reciclaje</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Incentivos Denuncias</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="">Generar Denuncia</a></li>
+                    <li><a href="{{url('/crearpregunta') }}">Mis Denuncias</a></li>
+                    <li><a href="#">Generar Incentivos</a></li>
+                    <li><a href="{{url('/crearrespuesta') }}">Mis Incentivos</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='fa fa-link'></i> <span>Soporte y Ayuda</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

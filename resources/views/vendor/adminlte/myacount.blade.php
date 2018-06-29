@@ -37,7 +37,7 @@
 
 	<div class="box box-warning">
 	            <div class="box-header with-border">
-	              <h3 class="box-title">Creación Cursos</h3>
+	              <h3 class="box-title">Datos Personales</h3>
 	            </div>
 	            <!-- /.box-header -->
 	            <div class="box-body">
@@ -77,7 +77,7 @@
 	          </div>
 						<div class="box box-warning">
 						            <div class="box-header with-border">
-						              <h3 class="box-title">Creación Cursos</h3>
+						              <h3 class="box-title">Datos Tipo Usuario Residencia</h3>
 						            </div>
 						            <!-- /.box-header -->
 						            <div class="box-body">
@@ -125,7 +125,7 @@
 
 											<div class="box box-warning">
 																	<div class="box-header with-border">
-																		<h3 class="box-title">Creación Cursos</h3>
+																		<h3 class="box-title">Datos de Inicio Sesión</h3>
 																	</div>
 																	<!-- /.box-header -->
 																	<div class="box-body">
@@ -143,12 +143,12 @@
 																			<input type="hidden" name="status" id="status" value="1">
 																	</div>
 																	<!-- /.box-body -->
-										</div>
-										<br><br>
-						<div class="col-md-12">
-						<button type="submit" class="btn btn-info pull-right">Sign in</button>
-					</div>
-					<br><br>
+																</div>
+																<br><br>
+												<div class="col-md-12">
+												<button type="submit" class="btn btn-info pull-right">Sign in</button>
+											</div>
+											<br><br>
 					</form>
 	  	</div>
 

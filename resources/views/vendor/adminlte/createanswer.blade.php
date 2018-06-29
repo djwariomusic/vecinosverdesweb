@@ -42,7 +42,17 @@
 	            <div class="box-body">
 	              <form role="form">
 	                <!-- input states -->
-	                <div class="form-group has-success">
+									<div class="form-group has-success">
+										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i>Buscar Tema</label>
+										<div class="input-group input-group-sm">
+											<input type="text" class="form-control">
+													<span class="input-group-btn">
+														<button type="button" class="btn btn-info btn-flat">Buscar!</button>
+													</span>
+										</div>
+									</div>
+
+									<div class="form-group has-success">
 	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Pregunta</label>
 	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo">
 	                </div>

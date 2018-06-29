@@ -11,10 +11,10 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('adminlte::createcourse');
-    }
+     public function index()
+     {
+         return view('adminlte::mycourse');
+     }
 
     /**
      * Show the form for creating a new resource.
