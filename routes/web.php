@@ -22,6 +22,8 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::get('/micuenta', 'UserController@acount');
   Route::get('/crearusuario', 'UserController@index');
+  Route::get('/usuarios', 'UserController@users');
+  Route::get('/usuarios/listausuarios', 'UserController@getUsers')->name('datatable.users');
   Route::get('/crearcurso', 'CourseController@index');
   Route::get('/crearpregunta', 'AnswerController@index');
   Route::get('/crearrespuesta', 'QuestionController@index');

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class UserController extends Controller
 {
@@ -14,6 +16,21 @@ class UserController extends Controller
     public function index()
     {
         return view('adminlte::createuser');
+    }
+
+    public function users()
+    {
+        return view('adminlte::listusers');
+    }
+
+    public function getUsers()
+    {
+        $users = User::select(['id','lastname','name','cc']);
+
+        return Datatables::of($users)
+
+            ->make(true);
+
     }
 
     public function acount()

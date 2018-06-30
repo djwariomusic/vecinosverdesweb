@@ -38,7 +38,7 @@ desired effect
     @include('adminlte::layouts.partials.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="min-height: 725.246px;">
 
         @include('adminlte::layouts.partials.contentheader')
 
@@ -53,11 +53,11 @@ desired effect
 
     @include('adminlte::layouts.partials.footer')
 
+    @yield('footer_scripts')
 </div><!-- ./wrapper -->
 </div>
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
 @show
-
 </body>
 </html>

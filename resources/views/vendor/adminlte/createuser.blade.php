@@ -55,7 +55,7 @@
 
 									<div class="form-group has-success">
 										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombres</b> <font color="orange">(*)</font></label>
-										<input type="text" name="lastname" id="lastname1" class="form-control" placeholder="Ingresar Apellidos" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" required title="Ingrese Apellidos">
+										<input type="text" name="name" id="name" class="form-control" placeholder="Ingresar Nombres" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" required title="Ingrese Nombres">
 									</div>
 
 									<div class="form-group has-success">

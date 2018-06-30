@@ -39,7 +39,7 @@
                 <a href="#"><i class='fa fa-link'></i> <span>Gestión Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/crearusuario') }}">Crear Usuario</a></li>
-                    <li><a href="#">Listar Usuarios</a></li>
+                    <li><a href="{{url('/usuarios')}}">Listar Usuarios</a></li>
                 </ul>
             </li>
             <li class="treeview">
