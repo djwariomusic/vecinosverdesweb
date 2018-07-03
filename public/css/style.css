@@ -21,7 +21,13 @@
     color: white;
 }
 
-#link a:link 
+#link a:link
 {
-text-decoration:none;
+  text-decoration:none;
+}
+
+#btnbuscar  
+{
+  background-color: #5bc0de;
+  color: white;
 }

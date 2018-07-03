@@ -31,6 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/editarcurso/{id}', 'CourseController@showCourse');
   Route::post('/modcurso', 'CourseController@saveCourse');
   Route::post('/eliminarcurso', 'CourseController@delCourse');
+  Route::get('/tema', 'LessonController@index');
+
   Route::get('/pregunta', 'QuestionController@index');
   Route::get('/preguntas', 'QuestionController@questions');
   Route::get('/preguntas/listapreguntas', 'QuestionController@getQuestions')->name('datatable.questions');
@@ -38,8 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/respuestas', 'AnswerController@answers');
   Route::get('/respuestas/listarespuestas', 'AnswerController@getAnswers')->name('datatable.answers');
 
-  Route::get('/miscursos', 'CourseController@index');
-  Route::get('/tema', 'LessonController@index');
+  Route::get('/miscursos', 'LessonController@mylesson');
 
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware

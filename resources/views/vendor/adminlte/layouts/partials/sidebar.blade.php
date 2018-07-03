@@ -45,17 +45,17 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestión Cursos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('/curso') }}">Crear Curso</a></li>
+                    <li><a href="{{url('/curso')}}">Crear Curso</a></li>
                     <li><a href="{{url('/cursos')}}">Listar Cursos</a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestión Eduación</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="">Gestion Temas</a></li>
-                    <li><a href="{{url('/pregunta') }}">Crear Pregunta</a></li>
+                    <li><a href="{{url('/tema')}}">Gestion Temas</a></li>
+                    <li><a href="{{url('/pregunta')}}">Crear Pregunta</a></li>
                     <li><a href="{{url('/preguntas')}}">Listar Preguntas</a></li>
-                    <li><a href="{{url('/respuesta') }}">Crear Respuestas</a></li>
+                    <li><a href="{{url('/respuesta')}}">Crear Respuestas</a></li>
                     <li><a href="{{url('/respuestas')}}">Listar Respuesta</a></li>
                 </ul>
             </li>
@@ -64,9 +64,9 @@
                 <a href="#"><i class='fa fa-link'></i> <span>Noticias Información</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="">Horario Empresas de Aseo</a></li>
-                    <li><a href="{{url('/crearpregunta') }}">Ubicación Centro Reciclaje</a></li>
+                    <li><a href="{{url('/crearpregunta')}}">Ubicación Centro Reciclaje</a></li>
                     <li><a href="#">Contactar Reciclador</a></li>
-                    <li><a href="{{url('/crearrespuesta') }}">Selección Basuras Reciclaje</a></li>
+                    <li><a href="{{url('/crearrespuesta')}}">Selección Basuras Reciclaje</a></li>
                 </ul>
             </li>
             <li class="treeview">

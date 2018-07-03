@@ -13,9 +13,14 @@ class LessonController extends Controller
      */
      public function index()
      {
-         return view('adminlte::lesson');
+         return view('adminlte::createlesson');
      }
 
+
+     public function mylesson()
+     {
+         return view('adminlte::mylesson');
+     }
     /**
      * Show the form for creating a new resource.
      *
