@@ -22,17 +22,21 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::get('/micuenta', 'UserController@acount');
   Route::get('/crearusuario', 'UserController@index');
-  Route::get('/usuarios', 'UserController@users');
+  Route::get('/usuario', 'UserController@index');
   Route::get('/usuarios/listausuarios', 'UserController@getUsers')->name('datatable.users');
-  Route::get('/crearcurso', 'CourseController@index');
+  Route::get('/curso', 'CourseController@index');
   Route::get('/cursos', 'CourseController@courses');
   Route::get('/cursos/listacursos', 'CourseController@getCourses')->name('datatable.courses');
-  Route::get('/crearpregunta', 'QuestionController@index');
+  Route::post('/crearcurso', 'CourseController@createCourse');
+  Route::get('/editarcurso/{id}', 'CourseController@showCourse');
+  Route::post('/modcurso', 'CourseController@saveCourse');
+  Route::post('/eliminarcurso', 'CourseController@delCourse');
+  Route::get('/pregunta', 'QuestionController@index');
   Route::get('/preguntas', 'QuestionController@questions');
   Route::get('/preguntas/listapreguntas', 'QuestionController@getQuestions')->name('datatable.questions');
-  Route::get('/crearrespuesta', 'AnswerController@index');
+  Route::get('/respuesta', 'AnswerController@index');
   Route::get('/respuestas', 'AnswerController@answers');
-  Route::get('/preguntas/listarespuestas', 'AnswerController@getAnswers')->name('datatable.answers');
+  Route::get('/respuestas/listarespuestas', 'AnswerController@getAnswers')->name('datatable.answers');
 
   Route::get('/miscursos', 'CourseController@index');
   Route::get('/tema', 'LessonController@index');

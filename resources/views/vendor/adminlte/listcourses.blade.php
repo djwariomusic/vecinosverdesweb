@@ -82,9 +82,9 @@
           </div>
 
           <div class="modal-footer">
-            <form action="{{url('/eliminarusuario')}}" method="post">
+            <form action="{{url('/eliminarcurso')}}" method="post">
               {{ csrf_field() }}
-              <input type="text" name="id" id="id" value=""/>
+              <input type="text" name="idcourse" id="idcourse" value=""/>
               <button type="submit" class="btn btn-danger">Eliminar</button>
               <button type="button" id="btnmodalclose" class="btn btn-default" data-dismiss="modal">Cerrar</button>
             </form>
@@ -126,7 +126,7 @@
 									{data: 'id',
 					         'render': function(data, type, row, meta){
 					            if(type === 'display'){
-					                data = '<a href="" style="text-decoration:none" data-toggle="modal" data-target="#MyModal" data-id="' + data + '" href="#addIdModal" class="open-AddIdModal">Mas Info. <i class="fa fa-info-circle" aria-hidden="true"></i></a>';
+					                data = '<a href="" style="text-decoration:none" data-toggle="modal" data-target="#MyModal" data-id="' + data + '" href="#addIdModal" class="open-AddIdModal"><i class="fa fa-trash" aria-hidden="true"></i></a>';
 					            }
 
 					            return data;
@@ -162,7 +162,7 @@
 <script>
   $(document).on("click", ".open-AddIdModal", function () {
      var myId = $(this).data('id');
-     $(".modal-footer #idstudent").val( myId );
+     $(".modal-footer #idcourse").val( myId );
     $('#addIdModal').modal('show');
   });
 </script>

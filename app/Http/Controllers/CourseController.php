@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Input;
 
 class CourseController extends Controller
 {
@@ -54,15 +55,85 @@ class CourseController extends Controller
         //
     }
 
+    public function createCourse()
+    {
+        $input = Input::all();
+
+        $course = new Course();
+        $course->namecourse = $input['namecourse'];
+        $course->descriptioncourse = $input['descriptioncourse'];
+        $course->status = $input['status'];
+        $course->save();
+        $alerts="ok";
+        return view('adminlte::listcourses',['alerts'=>$alerts]);
+
+    }
+
+
+    public function saveCourse() {
+        $input = Input::all();
+        if($input['idcourse'] != NULL) {
+            $course = Course::where('id','=',$input['idcourse'])->firstorFail();
+
+            if($course == null){
+              $alerts="null";
+              return view('adminlte::home',['alerts'=>$alerts]);
+            }
+            else{
+
+              $course->id = $input['idcourse'];
+              $course->namecourse = $input['namecourse'];
+              $course->descriptioncourse = $input['descriptioncourse'];
+              $course->status = $input['status'];
+              $course->save(); // Guarda el objeto en la BD
+              $alerts="mod";
+              return view('adminlte::listcourses');
+            }
+        }
+    }
+
+
+    public function delCourse() {
+        $input = Input::all();
+
+        $student = Course::where('id','=',$input['idcourse'])->firstorFail();
+            if($student == null){
+                $alerts="null";
+                return view('adminlte::home',['alerts'=>$alerts]);
+              }
+            else{
+                $course = Course::where('id','=',$input['idcourse'])->delete();
+                dd($course);
+                $alerts="del";
+                return view('adminlte::listcourses');
+            }
+    }
+
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showCourse($id  = null, Request $request)
     {
-        //
+      $alerts=NULL;
+
+      if ($id == null){
+          $alerts="null";
+          return view('adminlte::home',['alerts'=>$alerts]);
+      }
+      else{
+        $data = Course::where('id','=',$id)->firstorFail();
+            if($data == null){
+                $alerts="null";
+                return view('adminlte::home',['alerts'=>$alerts]);
+            }
+            else{
+                return view('adminlte::createcourse',['course'=>$data]);
+            }
+      }
     }
 
     /**
