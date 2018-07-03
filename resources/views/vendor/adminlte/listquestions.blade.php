@@ -15,7 +15,7 @@
 				<!-- Default box -->
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class="box-title">LIstado de Usuarios</h3>
+						<h3 class="box-title">Listado de Preguntas.</h3>
 
 						<div class="box-tools pull-right">
 							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -31,33 +31,30 @@
 				</div>
 				<!-- /.box -->
 
-			</div>
+				</div>
 		</div>
 	</div>
 
 <div class="col_md-12">
 	<div class="box">
             <div class="box-header">
-              <h3 class="box-title">Listado de Usuarios.</h3>
+              <h3 class="box-title">Listado de Preguntas.</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
 							<table id="datat" class="datatables" style="width:100%">
 				        <thead>
 				            <tr>
-				                <th>Id</th>
-				                <th>Apellidos</th>
-				                <th>Nombres</th>
-				                <th>No Identificación</th>
-												<th>Rol Usuario</th>
+				                <th>Id Pregunta</th>
+				                <th>Titulo Pregunta</th>
+				                <th>Status</th>
 				            </tr>
 				        </thead>
 				        <tbody>
 				            <tr>
-				                <td>Ejemplo Dato</td>
-				                <td>Ejemplo Dato</td>
-				                <td>Ejemplo Dato</td>
-				                <td>Ejemplo Dato</td>>
+				                <td>Texto Ejemplo</td>
+				                <td>Texto Ejemplo</td>
+				                <td>Texto Ejemplo</td>
 				            </tr>
 									</tbody>
 									</table>
@@ -80,13 +77,14 @@
 							processing	: false,
 							servedSide	: true,
 							responsive	: true,
-							ajax: '{{route('datatable.users')}}',
+
+
+							ajax: '{{route('datatable.answers')}}',
+							headers: "{'X-CSRF-TOKEN': '{{csrf_token()}}'}",
 							columns: [
-									{data: 'id', name: 'id'},
-									{data: 'lastname', name: 'lastname'},
-									{data: 'name', name: 'name'},
-									{data: 'cc', name: 'cc'},
-									{data: 'role', name: 'role'}
+									{data: 'idanswer', name: 'idanswer'},
+									{data: 'titleanswer', name: 'titleanswer'},
+									{data: 'status', name: 'status'}
 							],
 							language: {
 								processing:     "Procesando..",

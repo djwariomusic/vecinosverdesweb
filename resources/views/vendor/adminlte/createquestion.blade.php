@@ -41,56 +41,26 @@
 	            <!-- /.box-header -->
 	            <div class="box-body">
 	              <form role="form">
-									<div class="form-group has-success">
-										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i>Buscar Pregunta</label>
-										<div class="input-group input-group-sm">
-			                <input type="text" class="form-control">
-			                    <span class="input-group-btn">
-			                      <button type="button" class="btn btn-info btn-flat">Buscar!</button>
-			                    </span>
-	              		</div>
-									</div>
 	                <!-- input states -->
-	                <div class="form-group has-success">
-	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Opción Respuesta 1</label>
-	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo Respuesta">
-	                </div>
-
 									<div class="form-group has-success">
-										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Descripción Opción Respuesta 1</label>
-										<textarea class="form-control" rows="3" id="inputSuccess" placeholder="Descripción Ingresar Titulo"> </textarea>
+										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i>Buscar Tema</label>
+										<div class="input-group input-group-sm">
+											<input type="text" class="form-control">
+													<span class="input-group-btn">
+														<button type="button" class="btn btn-info btn-flat">Buscar!</button>
+													</span>
+										</div>
 									</div>
 
 									<div class="form-group has-success">
-	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Opción Respuesta 2</label>
-	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo Respuesta">
+	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Pregunta</label>
+	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo">
 	                </div>
 
 									<div class="form-group has-success">
-										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Descripción Opción Respuesta 2</label>
-										<textarea class="form-control" rows="3" id="inputSuccess" placeholder="Descripción Ingresar Titulo"> </textarea>
+										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Descripción Pregunta</label>
+										<textarea class="form-control" rows="9" id="inputSuccess" placeholder="Descripción Ingresar Titulo"> </textarea>
 									</div>
-
-									<div class="form-group has-success">
-	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Opción Respuesta 3</label>
-	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo Respuesta">
-	                </div>
-
-									<div class="form-group has-success">
-										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Descripción Opción Respuesta 3</label>
-										<textarea class="form-control" rows="3" id="inputSuccess" placeholder="Descripción Ingresar Titulo"> </textarea>
-									</div>
-
-									<div class="form-group has-success">
-	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Titulo Opción Respuesta 4</label>
-	                  <input type="text" class="form-control" id="inputSuccess" placeholder="Ingresar Titulo Respuesta">
-	                </div>
-
-									<div class="form-group has-success">
-										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Descripción Opción Respuesta 4</label>
-										<textarea class="form-control" rows="3" id="inputSuccess" placeholder="Descripción Ingresar Titulo"> </textarea>
-									</div>
-
 	                <button type="submit" class="btn btn-info pull-right">Sign in</button>
 	              </form>
 	            </div>

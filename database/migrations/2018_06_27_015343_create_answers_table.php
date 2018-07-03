@@ -15,12 +15,16 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
           $table->increments('idanswer');
-          $table->unsignedInteger('idlesson');
-          $table->string('titleanswer')->nullable();
-          $table->string('descriptionanswer')->nullable();
+          $table->string('answer1')->nullable();
+          $table->smallInteger('solutiona1')->nullable();
+          $table->string('answer2')->nullable();
+          $table->smallInteger('solutiona2')->nullable();
+          $table->string('answer3')->nullable();
+          $table->smallInteger('solutiona3')->nullable();
+          $table->string('answer4')->nullable();
+          $table->smallInteger('solutiona4')->nullable();
           $table->smallInteger('status')->nullable();
           $table->timestamps();
-          $table->foreign('idlesson')->references('idlesson')->on('lessons');
         });
     }
 

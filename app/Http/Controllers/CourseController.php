@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class CourseController extends Controller
 {
@@ -13,7 +15,22 @@ class CourseController extends Controller
      */
      public function index()
      {
-         return view('adminlte::mycourse');
+         return view('adminlte::createcourse');
+     }
+
+     public function courses()
+     {
+         return view('adminlte::listcourses');
+     }
+
+     public function getCourses()
+     {
+         $courses = Course::select(['id','namecourse','status']);
+
+         return Datatables::of($courses)
+
+             ->make(true);
+
      }
 
     /**

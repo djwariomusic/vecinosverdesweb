@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class AnswerController extends Controller
 {
@@ -14,6 +16,21 @@ class AnswerController extends Controller
     public function index()
     {
         return view('adminlte::createanswer');
+    }
+
+    public function answers()
+    {
+        return view('adminlte::listanswers');
+    }
+
+    public function getAnswers()
+    {
+        $answers = Answer::select(['idanswer','titleanswer','status']);
+
+        return Datatables::of($answers)
+
+            ->make(true);
+
     }
 
     /**

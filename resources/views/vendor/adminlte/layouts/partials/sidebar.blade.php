@@ -46,7 +46,7 @@
                 <a href="#"><i class='fa fa-link'></i> <span>Gestión Cursos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/crearcurso') }}">Crear Curso</a></li>
-                    <li><a href="#">Listar Cursos</a></li>
+                    <li><a href="{{url('/cursos')}}">Listar Cursos</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -54,9 +54,9 @@
                 <ul class="treeview-menu">
                     <li><a href="">Gestion Temas</a></li>
                     <li><a href="{{url('/crearpregunta') }}">Crear Pregunta</a></li>
-                    <li><a href="#">Listar Preguntas</a></li>
+                    <li><a href="{{url('/preguntas')}}">Listar Preguntas</a></li>
                     <li><a href="{{url('/crearrespuesta') }}">Crear Respuestas</a></li>
-                    <li><a href="#">Listar Respuesta</a></li>
+                    <li><a href="{{url('/respuestas')}}">Listar Respuesta</a></li>
                 </ul>
             </li>
             <li><a href="{{url('/miscursos')}}"><i class='fa fa-link'></i> <span>Formación</span></a></li>

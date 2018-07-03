@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class QuestionController extends Controller
 {
@@ -15,6 +17,22 @@ class QuestionController extends Controller
     {
         return view('adminlte::createquestion');
     }
+
+    public function questions()
+    {
+        return view('adminlte::listquestions');
+    }
+
+    public function getQuestions()
+    {
+        $questions = Question::select(['idquestion','status']);
+
+        return Datatables::of($questions)
+
+            ->make(true);
+
+    }
+
 
     /**
      * Show the form for creating a new resource.

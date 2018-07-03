@@ -6,6 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="{{ mix('/css/all.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('/css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('/css/font-awesome.css') }}" rel="stylesheet" type="text/css" />
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -57,5 +59,5 @@
     	</script>
       <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
 
-      
+
 </head>

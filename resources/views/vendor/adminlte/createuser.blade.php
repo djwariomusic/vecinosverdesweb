@@ -45,17 +45,17 @@
 	                <!-- input states -->
 	                <div class="form-group has-success">
 	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Cedula de Ciudadanía</b> <font color="orange">(*)</font></label>
-	                  <input type="text" name="cc" id="cc" class="form-control" placeholder="Ingresar Cedula de Ciudadania" pattern="\d*" maxlength="11" value="" required title="Ingrese Cedula Ciudadania Ej:80741852">
+	                  <input type="number" name="cc" id="cc" class="form-control" placeholder="Ingresar Cedula de Ciudadania" pattern="\d*" maxlength="11" value="" required title="Ingrese Cedula Ciudadania Ej:80741852"  autocomplete="off">
 	                </div>
 
 									<div class="form-group has-success">
 										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Apellidos</b> <font color="orange">(*)</font></label>
-										<input type="text" name="lastname" id="lastname1" class="form-control" placeholder="Ingresar Apellidos" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" required title="Ingrese Apellidos">
+										<input type="text" name="lastname" id="lastname1" class="form-control" placeholder="Ingresar Apellidos" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" required title="Ingrese Apellidos"  autocomplete="off">
 									</div>
 
 									<div class="form-group has-success">
 										<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombres</b> <font color="orange">(*)</font></label>
-										<input type="text" name="name" id="name" class="form-control" placeholder="Ingresar Nombres" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" required title="Ingrese Nombres">
+										<input type="text" name="name" id="name" class="form-control" placeholder="Ingresar Nombres" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" required title="Ingrese Nombres"  autocomplete="off">
 									</div>
 
 									<div class="form-group has-success">
@@ -77,7 +77,7 @@
 	          </div>
 						<div class="box box-warning">
 						            <div class="box-header with-border">
-						              <h3 class="box-title">Creación Cursos</h3>
+						              <h3 class="box-title">Datos Tipo Usuario Residencia</h3>
 						            </div>
 						            <!-- /.box-header -->
 						            <div class="box-body">
@@ -96,22 +96,22 @@
 
 														<div class="form-group has-success">
 															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombre Negocio</b> <font color="orange">(*)</font></label>
-															<input type="text" name="namelocal" id="namelocal" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Nombre Local">
+															<input type="text" name="namelocal" id="namelocal" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Nombre Local"  autocomplete="off">
 														</div>
 
 														<div class="form-group has-success">
 															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Dirección</b> <font color="orange">(*)</font></label>
-															<input type="text" name="address" id="address" class="form-control" placeholder="Ingresar Dirección" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Dirección">
+															<input type="text" name="address" id="address" class="form-control" placeholder="Ingresar Dirección" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Dirección"  autocomplete="off">
 														</div>
 
 														<div class="form-group has-success">
 															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Telefono</b> <font color="orange">(*)</font></label>
-															<input type="number" name="phone" id="phone" class="form-control" placeholder="Ingresar Telefono" value="" title="Ingrese Telefono">
+															<input type="number" name="phone" id="phone" class="form-control" placeholder="Ingresar Telefono" value="" title="Ingrese Telefono"  autocomplete="off">
 														</div>
 
 														<div class="form-group has-success">
 															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Barrio</b> <font color="orange">(*)</font></label>
-															<select name="neighborhood" id="neighborhood" class="form-control" required title="Ingrese Genero">
+															<select name="neighborhood" id="neighborhood" class="form-control" required title="Ingrese el Barrio">
 								                <option disabled selected value> -- Seleccionar Opción -- </option>
 								                <option value="1"> El Chico </option>
 								                <option value="2"> Juan XXIII </option>
@@ -125,19 +125,19 @@
 
 											<div class="box box-warning">
 																	<div class="box-header with-border">
-																		<h3 class="box-title">Creación Cursos</h3>
+																		<h3 class="box-title">Datos de Inicio Sesión</h3>
 																	</div>
 																	<!-- /.box-header -->
 																	<div class="box-body">
 																			<!-- input states -->
 																			<div class="form-group has-success">
 																				<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Email</b> <font color="orange">(*)</font></label>
-																				<input type="email" name="email" id="email" class="form-control" placeholder="Ingresar Email" value="" required title="Ingrese Email">
+																				<input type="email" name="email" id="email" class="form-control" placeholder="Ingresar Email" value="" required title="Ingrese Email"  autocomplete="off">
 																			</div>
 
 																			<div class="form-group has-success">
 																				<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Contraseña</b> <font color="orange">(*)</font></label>
-																				<input type="password" name="pswd" id="pswd" class="form-control" placeholder="Ingresar Password" value="" maxlength="10" required title="Ingrese Contraseña de Acceso">
+																				<input type="password" name="pswd" id="pswd" class="form-control" placeholder="Ingresar Password" value="" maxlength="10" required title="Ingrese Contraseña de Acceso"  autocomplete="off">
 																			</div>
 
 																			<input type="hidden" name="status" id="status" value="1">

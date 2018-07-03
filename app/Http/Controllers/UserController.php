@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function getUsers()
     {
-        $users = User::select(['id','lastname','name','cc']);
+        $users = User::select(['id','lastname','name','cc','role']);
 
         return Datatables::of($users)
 
