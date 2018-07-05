@@ -31,7 +31,9 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/editarcurso/{id}', 'CourseController@showCourse');
   Route::post('/modcurso', 'CourseController@saveCourse');
   Route::post('/eliminarcurso', 'CourseController@delCourse');
-  Route::get('/tema', 'LessonController@index');
+  Route::get('/tema', 'LessonController@index')->name('tema');
+
+  Route::post('/buscarcursotemas', 'LessonController@searchLessons');
 
   Route::get('/pregunta', 'QuestionController@index');
   Route::get('/preguntas', 'QuestionController@questions');

@@ -1,4 +1,5 @@
 @extends('adminlte::layouts.app')
+@extends('adminlte::layouts.partials.scripts')
 
 @section('htmlheader_title')
 	CREACIÓN DE USUARIOS
@@ -34,20 +35,28 @@
 	</div>
 
 <div class="col_md-12">
-
+@if(isset($courses))
 	<div class="box box-warning">
 	            <div class="box-header with-border">
 								<h3 class="box-title">Busqueda y Asignación de Curso</h3><br>
 	            </div>
 	            <!-- /.box-header -->
 	            <div class="box-body">
-	              <form role="form">
+	              <form role="form" action="{{url('/buscarcursotemas')}}" method="post" name="form">
 	                <!-- input states -->
+									{{ csrf_field() }}
 									<div class="container">
 										<div class="form-group">
 			                <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Busqueda de Cursos</b> <font color="orange">(*)</font></label>
 			                <div class="input-group my-colorpicker2 colorpicker-element">
-			                  <input type="text" style="height: 44px;" class="form-control">
+												<select name="namecourse" style="width:100%;height:45px;">
+													<option disabled select value> -- Seleccionar una Opción -- </option>
+													@forelse($courses as $course)
+													<option value="{{$course->id}}"> {{$course->namecourse}} </option>
+													@empty
+													<option disabled select value> No se encontraron Resultados </option>
+													@endforelse
+												</select>
 					                <div id="btnbuscar" class="input-group-addon bg-primary text-white">
 					              			<button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
 					                </div>
@@ -55,53 +64,73 @@
 		                <!-- /.input group -->
               			</div>
 									</div>
+								</form>
+@endif
 
-									<div class="col-md-12">
-									<div class="alert alert-warning alert-dismissible">
-									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-									<h4><i class="icon fa fa-warning"></i> Alert!</h4>
-									Warning alert preview. This alert is dismissable.
-									</div>
-									</div>
+								@if(isset($lessons))
+								@if(isset($lessons2))
+								@if($lessons2==0)
+																	<div class="col-md-12">
+																	<div class="alert alert-warning alert-dismissible">
+																	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+																	<h4><i class="icon fa fa-warning"></i> Alerta!</h4>
+																	No se encontraron Temas relacionados con el Curso.
+																	</div>
+																	<br><br><br>
+																			<input type="text" name="idcourse" id="idcourse" value="{{$namecourse}}"/>
+																			<span class="info-box-text"><button type="button" class="btn btn-block btn-primary btn-lg" onclick="demoDisplay()">Crear Tema</button></span>
+																	<br>
+																	</div>
 
-									<div class="col-md-12">
-									<div class="alert alert-success alert-dismissible">
-									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-									<h4><i class="fa fa-info-circle"></i> Alert!</h4>
-									Warning alert preview. This alert is dismissable.
-									</div>
-									<br><br>
-									<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Listado de Temas - Curso:</b></label>
-									<table id="datat" class="datatables" style="width:100%">
-										<thead>
-												<tr>
-														<th>Id Curso</th>
-														<th>Nombre Curso</th>
-														<th>Estatus</th>
-														<th>Editar</th>
-														<th>Eliminar</th>
-												</tr>
-										</thead>
-										<tbody>
-												<tr>
-														<td>Texto Ejemplo</td>
-														<td>Texto Ejemplo</td>
-														<td>Texto Ejemplo</td>
-														<td>Texto Ejemplo</td>
-														<td>Texto Ejemplo</td>
-												</tr>
-											</tbody>
-										</table>
+								@else
+																	<div class="col-md-12">
+																	<div class="alert alert-success alert-dismissible">
+																	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+																	<h4><i class="fa fa-info-circle"></i> Información!</h4>
+																	Se ha encontrado coincidencias de temas en el Curso seleccionado.
+																	</div>
+																	<br><br>
+																	<div class="row">
+																	<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Listado de Temas - Curso:</b></label>
+																	<table id="datat" class="datatables">
+																		<thead>
+																				<tr>
+																						<th>Titulo Tema</th>
+																						<th>Status</th>
+																						<th>Editar</th>
+																						<th>Eliminar</th>
+																				</tr>
+																		</thead>
+																		<tbody>
+																			@forelse($lessons as $lesson)
+																				<tr>
+																						<td>{{ $lesson->titlelesson }}</td>
+																						<td>{{ $lesson->status }}<input type="hidden" name="idcourse" id="idcourse" value="{{$lesson->id}}"/></td>
+																						<td>Texto Ejemplo</td>
+																						<td>Texto Ejemplo</td>
+																				</tr>
+																				@empty
+																					<tr>
+																						<td colspan="5" scope="col">No se encontraron Resultados</td>
+																					</tr>
+																				@endforelse
+																			</tbody>
+																		</table>
+																	</div>
+																			<br><br><br>
+																			<span class="info-box-text"><button type="button" class="btn btn-block btn-primary btn-lg" onclick="demoDisplay()">Crear Tema</button></span>
+																			<br>
+																		</div>
+														  </div>
+									            <!-- /.box-body -->
+@endif
+</div>
+</div>
+@endif
+@endif
 
 
-											<br><br><br>
-											<span class="info-box-text"><button type="button" class="btn btn-block btn-primary btn-lg">Crear Tema</button></span>
-											<br>
-										</div>
-						  </div>
-	            <!-- /.box-body -->
-	          </div>
-						<div class="box box-warning">
+						<div class="box box-warning" id="creartema" style="display:none;">
 						            <div class="box-header with-border">
 						              <h3 class="box-title">Creación de Temas</h3>
 						            </div>
@@ -110,6 +139,8 @@
 						                <!-- input states -->
 						                <div class="form-group has-success">
 						                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Tipo Usuario</b> <font color="orange">(*)</font></label>
+															<input type="text" name="idcourse2" id="idcourse2" class="form-control"/>
+
 															<select name="role" id="role" class="form-control" required title="Ingrese Genero">
 																<option disabled selected value> -- Seleccionar Opción -- </option>
 																<option value="1"> Residencial </option>
@@ -149,9 +180,16 @@
 						            </div>
 						            <!-- /.box-body -->
 						          </div>
-					</form>
-	  	</div>
+</div>
+@endsection
+@section('scripts')
 
-
+<script>
+function demoDisplay() {
+		var idcourse = document.getElementById("idcourse").value;
+		document.getElementById("idcourse2").value = idcourse;
+    document.getElementById("creartema").style.display = "block";
+}
+</script>
 
 @endsection
