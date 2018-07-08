@@ -21,9 +21,10 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 
   Route::get('/micuenta', 'UserController@acount');
-  Route::get('/crearusuario', 'UserController@index');
+  Route::post('/modmicuenta', 'UserController@saveAcount');
   Route::get('/usuario', 'UserController@index');
   Route::get('/usuarios/listausuarios', 'UserController@getUsers')->name('datatable.users');
+  Route::post('/crearusuario', 'UserController@createUser');
   Route::get('/curso', 'CourseController@index');
   Route::get('/cursos', 'CourseController@courses');
   Route::get('/cursos/listacursos', 'CourseController@getCourses')->name('datatable.courses');

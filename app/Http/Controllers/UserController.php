@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
 {
@@ -37,14 +38,67 @@ class UserController extends Controller
     {
         return view('adminlte::myacount');
     }
+
+    public function saveAcount()
+    {
+        $input = Input::all();
+        if($input['id'] != NULL) {
+            $user = User::where('id','=',$input['id'])->firstorFail();
+            $user->cc = $input['cc'];
+            $user->lastname = $input['lastname'];
+            $user->name = $input['name'];
+            $user->gender = $input['gender'];
+            $user->birthday = $input['birthday'];
+            $user->role = $input['role'];
+            $user->localname = $input['localname'];
+            $user->address = $input['address'];
+            $user->phone = $input['phone'];
+            $user->email = $input['email'];
+            $user->password = $input['password'];
+            $user->save(); // Guarda el objeto en la BD
+            return view('adminlte::listusers');
+        }
+        else{
+
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createUser()
     {
-        //
+      $input = Input::all();
+
+      if($input!= NULL){
+
+        $user = User::where('cc','=',$input['cc'])->orWhere('email','=',$input['email'])->get();
+
+        if (!$user->count()){
+          $user = new User;
+          $user->role =  $input['role'];
+          $user->cc = $input['cc'];
+          $user->lastname = $input['lastname'];
+          $user->name = $input['name'];
+          $user->gender = $input['gender'];
+          $user->birthday = $input['birthday'];
+          $user->localname = $input['localname'];
+          $user->address = $input['address'];
+          $user->phone = $input['phone'];
+          $user->email = $input['email'];
+          $user->password = bcrypt($input['password']);
+          $user->status = $input['status'];
+          $user->save();
+          $msj = "El usuario ha sido registrado Exitosamente.";
+          return view('adminlte::listusers');
+          //return view ('users.users',['msj'=>$msj]);
+        }
+        else{
+          $msj = "El usuario ya se encuentra Registrado. Favor Validar e intentar de Nuevo.";
+        }
+        //return view ('users.users',['msj'=>$msj]);
+      }
     }
 
     /**

@@ -34,14 +34,14 @@
 	</div>
 
 <div class="col_md-12">
-
+	<form role="form" action="{{url('/crearusuario')}}" method="post" name="form">
+		{{ csrf_field() }}
 	<div class="box box-warning">
 	            <div class="box-header with-border">
-	              <h3 class="box-title">Creación Cursos</h3>
+	              <h3 class="box-title">Creación Usuarios</h3>
 	            </div>
 	            <!-- /.box-header -->
 	            <div class="box-body">
-	              <form role="form">
 	                <!-- input states -->
 	                <div class="form-group has-success">
 	                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Cedula de Ciudadanía</b> <font color="orange">(*)</font></label>
@@ -96,7 +96,7 @@
 
 														<div class="form-group has-success">
 															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombre Negocio</b> <font color="orange">(*)</font></label>
-															<input type="text" name="namelocal" id="namelocal" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Nombre Local"  autocomplete="off">
+															<input type="text" name="localname" id="localname" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Nombre Local"  autocomplete="off">
 														</div>
 
 														<div class="form-group has-success">
@@ -137,7 +137,7 @@
 
 																			<div class="form-group has-success">
 																				<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Contraseña</b> <font color="orange">(*)</font></label>
-																				<input type="password" name="pswd" id="pswd" class="form-control" placeholder="Ingresar Password" value="" maxlength="10" required title="Ingrese Contraseña de Acceso"  autocomplete="off">
+																				<input type="password" name="password" id="password" class="form-control" placeholder="Ingresar Password" value="" maxlength="10" required title="Ingrese Contraseña de Acceso"  autocomplete="off">
 																			</div>
 
 																			<input type="hidden" name="status" id="status" value="1">
@@ -146,7 +146,7 @@
 										</div>
 										<br><br>
 						<div class="col-md-12">
-						<button type="submit" class="btn btn-info pull-right">Sign in</button>
+						<button type="submit" class="btn btn-info">Guardar</button>
 					</div>
 					<br><br>
 					</form>

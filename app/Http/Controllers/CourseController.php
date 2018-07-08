@@ -39,10 +39,6 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -103,7 +99,6 @@ class CourseController extends Controller
               }
             else{
                 $course = Course::where('id','=',$input['idcourse'])->delete();
-                dd($course);
                 $alerts="del";
                 return view('adminlte::listcourses');
             }
