@@ -46,10 +46,11 @@
 				        <thead>
 				            <tr>
 				                <th>Id</th>
-				                <th>Apellidos</th>
-				                <th>Nombres</th>
+				                <th id="columnhidden">Apellidos y Nombres</th>
 				                <th>No Identificación</th>
-												<th>Rol Usuario</th>
+				                <th>Rol Usuario</th>
+												<th>Editar</th>
+												<th>Eliminar</th>
 				            </tr>
 				        </thead>
 				        <tbody>
@@ -57,7 +58,9 @@
 				                <td>Ejemplo Dato</td>
 				                <td>Ejemplo Dato</td>
 				                <td>Ejemplo Dato</td>
-				                <td>Ejemplo Dato</td>>
+				                <td>Ejemplo Dato</td>
+												<td>Ejemplo Dato</td>
+												<td>Ejemplo Dato</td>
 				            </tr>
 									</tbody>
 									</table>
@@ -65,6 +68,32 @@
 </div>
 </div>
 
+<!-- Modal Bootstrap 1 -->
+    <div class="modal fade" id="MyModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Eliminar Registro</h4>
+          </div>
+
+          <div class="modal-body">
+            <p align="justify">
+              Esta Seguro que desea Eliminar el Curso. Este puede tener temas asociados.<br>
+
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <form action="{{url('/eliminarusuario')}}" method="post">
+              {{ csrf_field() }}
+              <input type="text" name="id" id="id" value=""/>
+              <button type="submit" class="btn btn-danger">Eliminar</button>
+              <button type="button" id="btnmodalclose" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 @endsection
 
@@ -83,10 +112,29 @@
 							ajax: '{{route('datatable.users')}}',
 							columns: [
 									{data: 'id', name: 'id'},
-									{data: 'lastname', name: 'lastname'},
-									{data: 'name', name: 'name'},
+									{data: function (data, type, dataToSet) {
+											 return data.lastname + " " + data.name;
+									 }},
 									{data: 'cc', name: 'cc'},
-									{data: 'role', name: 'role'}
+									{data: 'role', name: 'role'},
+									{data: 'id',
+					         'render': function(data, type, row, meta){
+					            if(type === 'display'){
+					                data = '<a style="text-decoration:none" href="/editarusuario/' + data + '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
+					            }
+
+					            return data;
+					         }
+								 },
+									{data: 'id',
+					         'render': function(data, type, row, meta){
+					            if(type === 'display'){
+					                data = '<a href="" style="text-decoration:none" data-toggle="modal" data-target="#MyModal" data-id="' + data + '" href="#addIdModal" class="open-AddIdModal"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+					            }
+
+					            return data;
+					         }
+								  }
 							],
 							language: {
 								processing:     "Procesando..",
@@ -112,6 +160,13 @@
 							}
 					});
 			});
+	</script>
+	<script>
+	  $(document).on("click", ".open-AddIdModal", function () {
+	     var myId = $(this).data('id');
+	     $(".modal-footer #id").val( myId );
+	    $('#addIdModal').modal('show');
+	  });
 	</script>
 
 @endsection

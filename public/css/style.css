@@ -26,8 +26,13 @@
   text-decoration:none;
 }
 
-#btnbuscar  
+#btnbuscar
 {
   background-color: #5bc0de;
   color: white;
+}
+
+@media only screen and (max-width: 300px) {
+.columnhidden{
+  display: none;
 }

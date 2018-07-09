@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/micuenta', 'UserController@acount');
   Route::post('/modmicuenta', 'UserController@saveAcount');
   Route::get('/usuario', 'UserController@index');
+  Route::get('/usuarios', 'UserController@users');
   Route::get('/usuarios/listausuarios', 'UserController@getUsers')->name('datatable.users');
   Route::post('/crearusuario', 'UserController@createUser');
   Route::get('/curso', 'CourseController@index');
@@ -35,7 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/tema', 'LessonController@index')->name('tema');
 
   Route::post('/buscarcursotemas', 'LessonController@searchLessons');
-
+  Route::post('/creartema', 'LessonController@createLesson');
   Route::get('/pregunta', 'QuestionController@index');
   Route::get('/preguntas', 'QuestionController@questions');
   Route::get('/preguntas/listapreguntas', 'QuestionController@getQuestions')->name('datatable.questions');

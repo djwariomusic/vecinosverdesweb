@@ -34,17 +34,17 @@
 		</div>
 	</div>
 
+
 <div class="col_md-12">
 @if(isset($courses))
 	<div class="box box-warning">
 	            <div class="box-header with-border">
 								<h3 class="box-title">Busqueda y Asignación de Curso</h3><br>
 	            </div>
+							<form role="form" action="{{url('/buscarcursotemas')}}" method="post" name="form">
+							{{ csrf_field() }}
 	            <!-- /.box-header -->
 	            <div class="box-body">
-	              <form role="form" action="{{url('/buscarcursotemas')}}" method="post" name="form">
-	                <!-- input states -->
-									{{ csrf_field() }}
 									<div class="container">
 										<div class="form-group">
 			                <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Busqueda de Cursos</b> <font color="orange">(*)</font></label>
@@ -64,12 +64,13 @@
 		                <!-- /.input group -->
               			</div>
 									</div>
-								</form>
+
+
 @endif
 
 								@if(isset($lessons))
 								@if(isset($lessons2))
-								@if($lessons2==0)
+								@if($lessons2=="")
 																	<div class="col-md-12">
 																	<div class="alert alert-warning alert-dismissible">
 																	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -91,7 +92,11 @@
 																	</div>
 																	<br><br>
 																	<div class="row">
-																	<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Listado de Temas - Curso:</b></label>
+																	<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Listado de Temas - Curso:
+																		@if(isset($courses2))
+																		{{$courses2->namecourse	}}
+																		@endif
+																	</b></label>
 																	<table id="datat" class="datatables">
 																		<thead>
 																				<tr>
@@ -105,7 +110,7 @@
 																			@forelse($lessons as $lesson)
 																				<tr>
 																						<td>{{ $lesson->titlelesson }}</td>
-																						<td>{{ $lesson->status }}<input type="hidden" name="idcourse" id="idcourse" value="{{$lesson->id}}"/></td>
+																						<td>{{ $lesson->status }}<input type="hidden" name="idcourse" id="idcourse" value="{{$lesson->id}}"/>	</td>
 																						<td>Texto Ejemplo</td>
 																						<td>Texto Ejemplo</td>
 																				</tr>
@@ -121,16 +126,22 @@
 																			<span class="info-box-text"><button type="button" class="btn btn-block btn-primary btn-lg" onclick="demoDisplay()">Crear Tema</button></span>
 																			<br>
 																		</div>
+															</form>
 														  </div>
 									            <!-- /.box-body -->
-@endif
-</div>
-</div>
-@endif
-@endif
 
 
-						<div class="box box-warning" id="creartema" style="display:none;">
+										@endif
+										@endif
+										@endif
+</div>
+</div>
+
+<br>
+<div class="col_md-12">
+	<form role="form2" action="{{url('/creartema')}}" method="post" name="form2">
+		{{ csrf_field() }}
+					<div class="box box-warning" id="creartema" style="display:none;">
 						            <div class="box-header with-border">
 						              <h3 class="box-title">Creación de Temas</h3>
 						            </div>
@@ -138,48 +149,42 @@
 						            <div class="box-body">
 						                <!-- input states -->
 						                <div class="form-group has-success">
-						                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Tipo Usuario</b> <font color="orange">(*)</font></label>
-															<input type="text" name="idcourse2" id="idcourse2" class="form-control"/>
-
-															<select name="role" id="role" class="form-control" required title="Ingrese Genero">
-																<option disabled selected value> -- Seleccionar Opción -- </option>
-																<option value="1"> Residencial </option>
-																<option value="2"> Comercial </option>
-																<option value="3"> Reciclador </option>
-																<option value="4"> Visitante </option>
-															</select>
-
-						                </div>
-
-														<div class="form-group has-success">
-															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombre Negocio</b> <font color="orange">(*)</font></label>
-															<input type="text" name="namelocal" id="namelocal" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Nombre Local">
+															<input type="text" name="idcourse2" id="idcourse2">
+															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Titulo Tema</b> <font color="orange">(*)</font></label>
+														  <input type="text" name="titlelesson" id="titlelesson" class="form-control" placeholder="Ingresar Titulo Tema o Lección" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Titulo Tema">
 														</div>
 
 														<div class="form-group has-success">
-															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Dirección</b> <font color="orange">(*)</font></label>
-															<input type="text" name="address" id="address" class="form-control" placeholder="Ingresar Dirección" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Dirección">
+															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Objetivo</b> <font color="orange">(*)</font></label>
+															<input type="text" name="objetive" id="objetive" class="form-control" placeholder="Ingresar Objetivo del Tema" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Objetivo del Tema">
 														</div>
 
 														<div class="form-group has-success">
-															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Telefono</b> <font color="orange">(*)</font></label>
-															<input type="number" name="phone" id="phone" class="form-control" placeholder="Ingresar Telefono" value="" title="Ingrese Telefono">
+															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Descripción</b> <font color="orange">(*)</font></label>
+															<input type="text" name="description" id="description" class="form-control" placeholder="Ingresar Descripción del Tema" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese Descripción del Tema">
 														</div>
 
 														<div class="form-group has-success">
-															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Barrio</b> <font color="orange">(*)</font></label>
-															<select name="neighborhood" id="neighborhood" class="form-control" required title="Ingrese Genero">
-								                <option disabled selected value> -- Seleccionar Opción -- </option>
-								                <option value="1"> El Chico </option>
-								                <option value="2"> Juan XXIII </option>
-								                <option value="3"> La Porciúncula </option>
-								                <option value="4"> Mariscal Sucre </option>
-								              </select>
+															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Contenido</b> <font color="orange">(*)</font></label>
+															<textarea class="form-control" rows="9" id="content" name="content" placeholder="Ingresar Contenido Tema"></textarea>
 														</div>
-														<button type="submit" class="btn btn-info pull-right">Sign in</button>
-						            </div>
+
+														<div class="form-group has-success">
+															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Imagen Portada</b> <font color="orange">(*)</font></label>
+															<input type="file" class="form-control-file" id="image" name="image">
+														</div>
+
+														<div class="form-group has-success">
+															<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>URL Video</b> <font color="orange">(*)</font></label>
+															<input type="text" name="url" id="url" class="form-control" placeholder="Ingresar URL Video del Tema" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="" title="Ingrese URL Video del Tema">
+															<input type="hidden" name="status" id="status" class="form-control" value="1">
+														</div>
+
+														<button type="submit" class="btn btn-info" formaction="/creartema">Guardar</button>
+						            	</div>
 						            <!-- /.box-body -->
 						          </div>
+</form>
 </div>
 @endsection
 @section('scripts')

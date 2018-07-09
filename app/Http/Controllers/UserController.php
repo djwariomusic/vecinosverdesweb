@@ -101,6 +101,21 @@ class UserController extends Controller
       }
     }
 
+    public function delUser() {
+        $input = Input::all();
+
+        $student = Course::where('id','=',$input['idcourse'])->firstorFail();
+            if($student == null){
+                $alerts="null";
+                return view('adminlte::home',['alerts'=>$alerts]);
+              }
+            else{
+                $course = Course::where('id','=',$input['idcourse'])->delete();
+                $alerts="del";
+                return view('adminlte::listcourses');
+            }
+    }
+
     /**
      * Store a newly created resource in storage.
      *

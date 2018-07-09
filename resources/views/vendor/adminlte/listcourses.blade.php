@@ -76,7 +76,7 @@
 
           <div class="modal-body">
             <p align="justify">
-              Esta Seguro que desea Eliminar el Curso. Este puede tener temas asociados.<br>
+              Esta Seguro que desea Eliminar este Usuario.<br>
 
             </p>
           </div>
@@ -97,7 +97,6 @@
 
 
 @section('scripts')
-
 	<script type="text/javascript">
 			$(document).ready(function(){
 					$('.datatables').DataTable({

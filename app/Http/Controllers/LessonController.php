@@ -39,13 +39,14 @@ class LessonController extends Controller
 
            if($lessons == null){
              $alerts="null";
-             return view('adminlte::home',['alerts'=>$alerts]);
+             return view('adminlte::createlesson',['alerts'=>$alerts]);
            }
            else{
              $lessons = DB::table('courses')->join('lessons','courses.id','=','lessons.idcourse')->where('courses.id','=',$namecourse)->get();
-             $lessons2 = DB::table('lessons')->where('lessons.idcourse','=',$namecourse)->count();
+             $lessons2 = DB::table('lessons')->where('lessons.idcourse','=',$namecourse)->first();
              $courses = Course::all();
-             return view('adminlte::createlesson',['courses'=>$courses,'lessons'=>$lessons,'lessons2'=>$lessons2,'namecourse'=>$namecourse]);
+             $courses2 = DB::table('courses')->where('courses.id','=',$namecourse)->first();
+             return view('adminlte::createlesson',['courses'=>$courses,'courses2'=>$courses2,'lessons'=>$lessons,'lessons2'=>$lessons2,'namecourse'=>$namecourse]);
            }
        }
 
@@ -56,9 +57,31 @@ class LessonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createLesson()
     {
-        //
+      $input = Input::all();
+
+      if($input!= NULL){
+
+          $lesson = new Lesson;
+          $lesson->idcourse =  $input['idcourse2'];
+          $lesson->titlelesson = $input['titlelesson'];
+          $lesson->objetive = $input['objetive'];
+          $lesson->description = $input['description'];
+          $lesson->content = $input['content'];
+          $lesson->image = $input['image'];
+          $lesson->url = $input['url'];
+          $lesson->status = $input['status'];
+          $lesson->save();
+          $msj = "El usuario ha sido registrado Exitosamente.";
+          return redirect()->to('/tema');
+          //return view ('users.users',['msj'=>$msj]);
+      }
+      else{
+          $msj = "El usuario ya se encuentra Registrado. Favor Validar e intentar de Nuevo.";
+      }
+        //return view ('users.users',['msj'=>$msj]);
+
     }
 
     /**
