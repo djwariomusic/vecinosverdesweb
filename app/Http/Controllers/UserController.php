@@ -54,7 +54,7 @@ class UserController extends Controller
             $user->address = $input['address'];
             $user->phone = $input['phone'];
             $user->email = $input['email'];
-            $user->password = $input['password'];
+            $user->password = bcrypt($input['password']);
             $user->save(); // Guarda el objeto en la BD
             return view('adminlte::listusers');
         }
@@ -104,15 +104,15 @@ class UserController extends Controller
     public function delUser() {
         $input = Input::all();
 
-        $student = Course::where('id','=',$input['idcourse'])->firstorFail();
-            if($student == null){
+        $user = User::where('id','=',$input['id'])->firstorFail();
+            if($user == null){
                 $alerts="null";
                 return view('adminlte::home',['alerts'=>$alerts]);
               }
             else{
-                $course = Course::where('id','=',$input['idcourse'])->delete();
+                $user = User::where('id','=',$input['id'])->delete();
                 $alerts="del";
-                return view('adminlte::listcourses');
+                return view('adminlte::listusers');
             }
     }
 
@@ -122,6 +122,27 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     public function showUser($id  = null, Request $request)
+     {
+       $alerts=NULL;
+
+       if ($id == null){
+           $alerts="null";
+           return view('adminlte::home',['alerts'=>$alerts]);
+       }
+       else{
+         $data = User::where('id','=',$id)->firstorFail();
+             if($data == null){
+                 $alerts="null";
+                 return view('adminlte::home',['alerts'=>$alerts]);
+             }
+             else{
+                 return view('adminlte::createuser',['user2'=>$data]);
+             }
+       }
+     }
+
     public function store(Request $request)
     {
         //

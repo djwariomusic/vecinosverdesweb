@@ -34,7 +34,7 @@
 	</div>
 	@if(isset($user2))
 	<div class="col_md-12">
-		<form role="form" action="{{url('/crearusuario')}}" method="post" name="form">
+		<form role="form" action="{{url('/modusuario')}}" method="post" name="form">
 			{{ csrf_field() }}
 		<div class="box box-warning">
 		            <div class="box-header with-border">
@@ -44,18 +44,19 @@
 		            <div class="box-body">
 		                <!-- input states -->
 		                <div class="form-group has-success">
+											<input type="hidden" class="form-control" id="id" name="id" value="{{isset($user2) ? $user2->id : '' }}">
 		                  <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Cedula de Ciudadanía</b> <font color="orange">(*)</font></label>
-		                  <input type="number" name="cc" id="cc" class="form-control" placeholder="Ingresar Cedula de Ciudadania" pattern="\d*" maxlength="11" value="{{isset($user) ? $user->cc : '' }}" required title="Ingrese Cedula Ciudadania Ej:80741852"  autocomplete="off">
+		                  <input type="number" name="cc" id="cc" class="form-control" placeholder="Ingresar Cedula de Ciudadania" pattern="\d*" maxlength="11" value="{{isset($user2) ? $user2->cc : '' }}" required title="Ingrese Cedula Ciudadania Ej:80741852"  autocomplete="off">
 		                </div>
 
 										<div class="form-group has-success">
 											<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Apellidos</b> <font color="orange">(*)</font></label>
-											<input type="text" name="lastname" id="lastname1" class="form-control" placeholder="Ingresar Apellidos" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user) ? $user->lastname : '' }}" required title="Ingrese Apellidos"  autocomplete="off">
+											<input type="text" name="lastname" id="lastname1" class="form-control" placeholder="Ingresar Apellidos" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user) ? $user2->lastname : '' }}" required title="Ingrese Apellidos"  autocomplete="off">
 										</div>
 
 										<div class="form-group has-success">
 											<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombres</b> <font color="orange">(*)</font></label>
-											<input type="text" name="name" id="name" class="form-control" placeholder="Ingresar Nombres" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user) ? $user->name : '' }}" required title="Ingrese Nombres"  autocomplete="off">
+											<input type="text" name="name" id="name" class="form-control" placeholder="Ingresar Nombres" pattern="[A-Z]{3-20}" maxlength="20" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user2) ? $user2->name : '' }}" required title="Ingrese Nombres"  autocomplete="off">
 										</div>
 
 										<div class="form-group has-success">
@@ -70,7 +71,7 @@
 
 										<div class="form-group has-success">
 											<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Fecha Nacimiento</b><font color="orange">(*)</font></label>
-											<input type="date" name="birthday" id="birthday" class="form-control" value="{{substr($user->birthday, 0, 10)}}">
+											<input type="date" name="birthday" id="birthday" class="form-control" value="{{substr($user2->birthday, 0, 10)}}">
 										</div>
 		            </div>
 		            <!-- /.box-body -->
@@ -96,17 +97,17 @@
 
 															<div class="form-group has-success">
 																<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Nombre Negocio</b> <font color="orange">(*)</font></label>
-																<input type="text" name="localname" id="localname" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user) ? $user->localname : '' }}" title="Ingrese Nombre Local"  autocomplete="off">
+																<input type="text" name="localname" id="localname" class="form-control" placeholder="Ingresar Nombre Local" pattern="[A-Z]{3-50}" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user2) ? $user2->localname : '' }}" title="Ingrese Nombre Local"  autocomplete="off">
 															</div>
 
 															<div class="form-group has-success">
 																<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Dirección</b> <font color="orange">(*)</font></label>
-																<input type="text" name="address" id="address" class="form-control" placeholder="Ingresar Dirección" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user) ? $user->address : '' }}" title="Ingrese Dirección"  autocomplete="off">
+																<input type="text" name="address" id="address" class="form-control" placeholder="Ingresar Dirección" maxlength="50" onkeyup="javascript:this.value=this.value.toUpperCase();" value="{{isset($user2) ? $user2->address : '' }}" title="Ingrese Dirección"  autocomplete="off">
 															</div>
 
 															<div class="form-group has-success">
 																<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Telefono</b> <font color="orange">(*)</font></label>
-																<input type="number" name="phone" id="phone" class="form-control" placeholder="Ingresar Telefono" value="{{isset($user) ? $user->phone : '' }}" title="Ingrese Telefono"  autocomplete="off">
+																<input type="number" name="phone" id="phone" class="form-control" placeholder="Ingresar Telefono" value="{{isset($user2) ? $user2->phone : '' }}" title="Ingrese Telefono"  autocomplete="off">
 															</div>
 
 															<div class="form-group has-success">
@@ -125,19 +126,19 @@
 
 												<div class="box box-warning">
 																		<div class="box-header with-border">
-																			<h3 class="box-title">Datos de Inicio Sesión</h3>	
+																			<h3 class="box-title">Datos de Inicio Sesión</h3>
 																		</div>
 																		<!-- /.box-header -->
 																		<div class="box-body">
 																				<!-- input states -->
 																				<div class="form-group has-success">
 																					<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Email</b> <font color="orange">(*)</font></label>
-																					<input type="email" name="email" id="email" class="form-control" placeholder="Ingresar Email" value="{{isset($user) ? $user->email : '' }}" required title="Ingrese Email"  autocomplete="off">
+																					<input type="email" name="email" id="email" class="form-control" placeholder="Ingresar Email" value="{{isset($user2) ? $user2->email : '' }}" required title="Ingrese Email"  autocomplete="off">
 																				</div>
 
 																				<div class="form-group has-success">
 																					<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i><b>Contraseña</b> <font color="orange">(*)</font></label>
-																					<input type="password" name="password" id="password" class="form-control" placeholder="Ingresar Password" value="{{isset($user) ? $user->password : '' }}" maxlength="10" required title="Ingrese Contraseña de Acceso"  autocomplete="off">
+																					<input type="password" name="password" id="password" class="form-control" placeholder="Ingresar Password" value="{{isset($user2) ? $user2->password : '' }}" maxlength="10" required title="Ingrese Contraseña de Acceso"  autocomplete="off">
 																				</div>
 
 																				<input type="hidden" name="status" id="status" value="1">

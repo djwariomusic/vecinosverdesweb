@@ -92,8 +92,8 @@ class CourseController extends Controller
     public function delCourse() {
         $input = Input::all();
 
-        $student = Course::where('id','=',$input['idcourse'])->firstorFail();
-            if($student == null){
+        $course = Course::where('id','=',$input['idcourse'])->firstorFail();
+            if($course == null){
                 $alerts="null";
                 return view('adminlte::home',['alerts'=>$alerts]);
               }

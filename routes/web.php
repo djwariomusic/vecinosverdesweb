@@ -26,6 +26,9 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/usuarios', 'UserController@users');
   Route::get('/usuarios/listausuarios', 'UserController@getUsers')->name('datatable.users');
   Route::post('/crearusuario', 'UserController@createUser');
+  Route::get('/editarusuario/{id}', 'UserController@showUser');
+  Route::post('/modusuario', 'UserController@saveAcount');
+  Route::post('/eliminarusuario', 'UserController@delUser');
   Route::get('/curso', 'CourseController@index');
   Route::get('/cursos', 'CourseController@courses');
   Route::get('/cursos/listacursos', 'CourseController@getCourses')->name('datatable.courses');
