@@ -90,10 +90,29 @@ class LessonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function saveLesson() {
+         $input = Input::all();
+
+         $lesson = DB::table('lessons')->where('lessons.idlesson','=',$input['idlesson2'])->get();
+             if($lesson == null){
+               $alerts="null";
+               return view('adminlte::home',['alerts'=>$alerts]);
+             }
+             else{
+               $lesson = Lesson::where('idlesson','=',$input['idlesson2'])->where('idcourse','=',$input['idcourse2'])->firstorFail();
+               $lesson->titlelesson = $input['titlelesson'];
+               $lesson->objetive = $input['objetive'];
+               $lesson->description = $input['description'];
+               $lesson->content = $input['content'];
+               $lesson->url = $input['url'];
+               $lesson->status = $input['status'];
+               $lesson->save();// Guarda el objeto en la BD
+               $alerts="mod";
+               return redirect()->to('/tema');
+             }
+
+     }
+
 
     /**
      * Display the specified resource.
@@ -101,10 +120,27 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+     public function showLesson($id  = null, Request $request)
+     {
+       $alerts=NULL;
+
+       if ($id == null){
+           $alerts="null";
+           return view('adminlte::home',['alerts'=>$alerts]);
+       }
+       else{
+         $lesson = Lesson::where('idlesson','=',$id)->firstorFail();
+             if($lesson == null){
+                 $alerts="null";
+                 return view('adminlte::home',['alerts'=>$alerts]);
+             }
+             else{
+
+                 return view('adminlte::editlesson',['lesson'=>$lesson]);
+             }
+       }
+     }
+
 
     /**
      * Show the form for editing the specified resource.

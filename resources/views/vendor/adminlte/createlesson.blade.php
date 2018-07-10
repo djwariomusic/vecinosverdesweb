@@ -111,8 +111,8 @@
 																				<tr>
 																						<td>{{ $lesson->titlelesson }}</td>
 																						<td>{{ $lesson->status }}<input type="hidden" name="idcourse" id="idcourse" value="{{$lesson->id}}"/>	</td>
-																						<td>Texto Ejemplo</td>
-																						<td>Texto Ejemplo</td>
+																						<td><a href="{{url('editartema/'.$lesson->idlesson)}}" style="text-decoration:none"><i class="fa fa-edit"></i></a></td>
+																						<td><a href="" style="text-decoration:none" data-toggle="modal" data-target="#MyModal" data-id="{{$lesson->idlesson}}" href="#addIdModal" class="open-AddIdModal"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 																				</tr>
 																				@empty
 																					<tr>
@@ -186,6 +186,34 @@
 						          </div>
 </form>
 </div>
+
+
+<!-- Modal Bootstrap 1 -->
+    <div class="modal fade" id="MyModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Eliminar Registro</h4>
+          </div>
+
+          <div class="modal-body">
+            <p align="justify">
+              Esta Seguro que desea Eliminar este Tema.<br>
+
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <form action="{{url('/eliminartema')}}" method="post">
+              {{ csrf_field() }}
+              <input type="text" name="idlesson" id="idlesson" value=""/>
+              <button type="submit" class="btn btn-danger">Eliminar</button>
+              <button type="button" id="btnmodalclose" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 @endsection
 @section('scripts')
 
@@ -195,6 +223,14 @@ function demoDisplay() {
 		document.getElementById("idcourse2").value = idcourse;
     document.getElementById("creartema").style.display = "block";
 }
+</script>
+
+<script>
+  $(document).on("click", ".open-AddIdModal", function () {
+     var myId = $(this).data('id');
+     $(".modal-footer #idlesson").val( myId );
+    $('#addIdModal').modal('show');
+  });
 </script>
 
 @endsection

@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('/modcurso', 'CourseController@saveCourse');
   Route::post('/eliminarcurso', 'CourseController@delCourse');
   Route::get('/tema', 'LessonController@index')->name('tema');
+  Route::get('/editartema/{id}', 'LessonController@showLesson');
+  Route::post('/modtema', 'LessonController@saveLesson');
 
   Route::post('/buscarcursotemas', 'LessonController@searchLessons');
   Route::post('/creartema', 'LessonController@createLesson');
