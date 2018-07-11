@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Lesson;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
@@ -15,7 +16,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return view('adminlte::createquestion');
+        $lessons = Lesson::all();
+        return view('adminlte::createquestion',['lessons'=>$lessons]);
     }
 
     public function questions()
@@ -32,6 +34,30 @@ class QuestionController extends Controller
             ->make(true);
 
     }
+
+
+    public function searchQuestions()
+    {
+      $input = Input::all();
+      $namelesson = $input['namelesson'];
+
+      if($input['namecourse'] != NULL) {
+          $questions = DB::table('questions')->join('lessons','idlesson','=','questions.idlesson')->where('questions.idlesson','=',$input['namelesson'])->get();
+
+
+          if($questions == null){
+            $alerts="null";
+            return view('adminlte::createquestion',['alerts'=>$alerts]);
+          }
+          else{
+            $questions = DB::table('questions')->join('lessons','idlesson','=','questions.idlesson')->where('questions.idlesson','=',$namelesson)->get();
+            $questions2 = DB::table('questions')->where('questions.idlesson','=',$namelesson)->first();
+            $lessons = Lesson::all();
+            $lessons2 = DB::table('lessons')->where('lessons.idlesson','=',$namelesson)->first();
+            return view('adminlte::createquestion',['lessons'=>$lessons,'lessons2'=>$lessons2,'questions'=>$questions,'questions2'=>$questions2]);
+          }
+      }
+
 
 
     /**
