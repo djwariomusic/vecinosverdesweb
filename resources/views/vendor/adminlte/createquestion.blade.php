@@ -80,7 +80,7 @@
 																		No se encontraron Preguntas relacionadas con el Tema.
 																		</div>
 																		<br><br><br>
-																				<input type="text" name="idquestion" id="idquestion" value="{{$lessons2->idlesson}}"/>
+																				<input type="text" name="idlesson" id="idlesson" value="{{$lessons2->idlesson}}"/>
 																				<span class="info-box-text"><button type="button" class="btn btn-block btn-primary btn-lg" onclick="demoDisplay()">Crear Tema</button></span>
 																		<br>
 																		</div>
