@@ -6,6 +6,8 @@ use App\Question;
 use App\Lesson;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Input;
+use DB;
 
 class QuestionController extends Controller
 {
@@ -41,22 +43,28 @@ class QuestionController extends Controller
       $input = Input::all();
       $namelesson = $input['namelesson'];
 
-      if($input['namecourse'] != NULL) {
-          $questions = DB::table('questions')->join('lessons','idlesson','=','questions.idlesson')->where('questions.idlesson','=',$input['namelesson'])->get();
-
+      if($input['namelesson'] != NULL) {
+          $questions = DB::table('questions')->join('lessons','lessons.idlesson','=','questions.idlesson')->where('questions.idlesson','=',$input['namelesson'])->first();
 
           if($questions == null){
+            $lessons = Lesson::all();
+            $lessons2 = Lesson::where('idlesson','=',$input['namelesson'])->first();
+            $questions = "null";
+            $questions2 = "null";
+            //dd($lessons);
             $alerts="null";
-            return view('adminlte::createquestion',['alerts'=>$alerts]);
+            return view('adminlte::createquestion',['alerts'=>$alerts,'questions2'=>$questions2,'questions'=>$questions,'lessons'=>$lessons,'lessons2'=>$lessons2]);
           }
           else{
-            $questions = DB::table('questions')->join('lessons','idlesson','=','questions.idlesson')->where('questions.idlesson','=',$namelesson)->get();
+            $questions = DB::table('questions')->join('lessons','lessons.idlesson','=','questions.idlesson')->where('questions.idlesson','=',$input['namelesson'])->get();
             $questions2 = DB::table('questions')->where('questions.idlesson','=',$namelesson)->first();
+            //dd($questions2);
             $lessons = Lesson::all();
             $lessons2 = DB::table('lessons')->where('lessons.idlesson','=',$namelesson)->first();
             return view('adminlte::createquestion',['lessons'=>$lessons,'lessons2'=>$lessons2,'questions'=>$questions,'questions2'=>$questions2]);
           }
       }
+    }
 
 
 

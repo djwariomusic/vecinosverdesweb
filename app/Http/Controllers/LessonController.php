@@ -148,6 +148,22 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     public function delLesson() {
+         $input = Input::all();
+
+         $lesson = Lesson::where('idlesson','=',$input['idlesson'])->firstorFail();
+             if($lesson == null){
+                 $alerts="null";
+                 return view('adminlte::home',['alerts'=>$alerts]);
+               }
+             else{
+                 $lesson = Lesson::where('idlesson','=',$input['idlesson'])->delete();
+                 $alerts="del";
+                 return redirect()->to('/tema');
+             }
+     }
+
+
     public function edit($id)
     {
         //

@@ -39,10 +39,14 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/tema', 'LessonController@index')->name('tema');
   Route::get('/editartema/{id}', 'LessonController@showLesson');
   Route::post('/modtema', 'LessonController@saveLesson');
+  Route::post('/eliminartema', 'LessonController@delLesson');
 
   Route::post('/buscarcursotemas', 'LessonController@searchLessons');
   Route::post('/creartema', 'LessonController@createLesson');
   Route::get('/pregunta', 'QuestionController@index');
+  Route::get('/editarpregunta/{id}', 'QuestionController@showQuestion');
+  Route::post('/modpregunta', 'QuestionController@saveQuestion');
+  Route::post('/buscartemapreguntas', 'QuestionController@searchQuestions');
   Route::get('/preguntas', 'QuestionController@questions');
   Route::get('/preguntas/listapreguntas', 'QuestionController@getQuestions')->name('datatable.questions');
   Route::get('/respuesta', 'AnswerController@index');
