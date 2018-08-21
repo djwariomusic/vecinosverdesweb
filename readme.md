@@ -7,19 +7,25 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de la Problemática 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+De acuerdo a lo identificado en la problemática, existe poca formación en temas relacionados con Medio Ambiente, específicamente en temas relacionados con la recolección de basuras, 
+reciclaje y veeduría ciudadana. Engativá como localidad ha 	identificado en su población muy variada quizás clasificada entre residente comercial, 
+residente familiar ó transeúnte frecuente, el poco acceso que se tiene a información sobre la clasificación de basuras, los horarios de los operadores de aseo, 
+ubicación de contenedores de basuras y depósitos de reciclaje o escombros (chatarrerías). 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Acerca de Vecinos Verdes
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+La Cultura del Reciclaje es la actitud proactiva de la ciudadanía y los	organismos públicos, en establecer políticas ambientales para la recolección y el manejo de los desechos sólidos, 
+con el fin de NO contaminar las ciudades e incentivando un patrón de conducta ecológico en la colectividad.	Una aplicación web puede convertirse en una poderosa herramienta pedagógica 
+y didáctica que aproveche nuestra capacidad de aprendizaje. Por lo cual se propone una solución informática que permita vincular a los ciudadanos residentes o 
+negociantes en una comunidad virtual que permita formarse, informarse, denunciar y acceder a beneficios que sean reportados por los operadores de aseo o reciclaje 
+sobre las unidades de vivienda vinculadas a la cuenta usuario. 
+
+## Objetivos Iniciales Vecinos Verdes
+
+- Desarrollar un software web construido con la metodología ágil, arquitectura MVC (Modelo Vista Controlador) y diferentes herramientas Opensource expuesto en el alcance inicial de la Propuesta Tecnológica.
+- Proponer una solución tecnológica basada en las TIC's que permita mitigar las necesidades expuestas en el reto Localidad.
 
 ## Learning Laravel
 
