@@ -27,11 +27,21 @@ sobre las unidades de vivienda vinculadas a la cuenta usuario.
 - Desarrollar un software web construido con la metodología ágil, arquitectura MVC (Modelo Vista Controlador) y diferentes herramientas Opensource expuesto en el alcance inicial de la Propuesta Tecnológica.
 - Proponer una solución tecnológica basada en las TIC's que permita mitigar las necesidades expuestas en el reto Localidad.
 
-## Learning Laravel
+## Arquitectura Tecnológica Propuesta
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Se utilizará la arquitectura MVC, la cual nos permitirá separar los datos, la interfaz de usuario y la lógica de negocio como tres elementos independientes. 
+Realizar este patrón de diseño ofrecerá características importantes en mantenibilidad, seguridad, eficiencia en el uso y control de los recursos. El motor de bases de datos 
+MySQL y el servidor web APACHE; permite que las empresas de programación tengan la posibilidad de comenzar a desarrollar productos basados en tecnología de punta que, 
+combinados con el bajo el costo y una metodología ágil basada en el servicio al cliente, pueden llegar a ser sustancialmente competitivos frente a los productos desarrollados 
+por empresas de mayor trayectoria. Este entorno de programación es conocido como StackLAMP (Linux, Apache, MySQL y PHP)
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+El uso del Framework Laravel 5.4 LTS proporcionará un entorno de forma profesional, adicionando un sin número de componentes de la comunidad de Open Source como son: 
+Vagrant, Composer, Bootstrap, Jquery y demás necesarias con la finalidad de optimizar el desarrollo web manteniendo estándares de calidad. La aceptación de Laravel por la comunidad de 
+programadores mundial lo ha posicionado entre los mejores según (SitePoint, 2017).
+No siendo la única herramienta se propone el uso de un sistema de control de versionamiento GIT o repositorio que permita ser una evidencia real de la ejecución en tiempo y 
+líneas de código de la etapa del desarrollo. Aunque parezca abrumadora la cantidad de herramientas mencionadas, su uso es práctico y su utilidad aporta a la calidad de software en 
+diferentes aspectos de forma transversal.
+<p align="center"><img src="https://preview.ibb.co/njvqJK/stackdeveloper.png"></p>
 
 ## Laravel Sponsors
 
