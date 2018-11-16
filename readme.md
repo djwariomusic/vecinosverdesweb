@@ -7,20 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Acerca de la Problemática 
+## Acerca de la Problemática
 
-De acuerdo a lo identificado en la problemática, existe poca formación en temas relacionados con Medio Ambiente, específicamente en temas relacionados con la recolección de basuras, 
-reciclaje y veeduría ciudadana. Engativá como localidad ha 	identificado en su población muy variada quizás clasificada entre residente comercial, 
-residente familiar ó transeúnte frecuente, el poco acceso que se tiene a información sobre la clasificación de basuras, los horarios de los operadores de aseo, 
-ubicación de contenedores de basuras y depósitos de reciclaje o escombros (chatarrerías). 
+De acuerdo a lo identificado en la problemática, existe poca formación en temas relacionados con Medio Ambiente, específicamente en temas relacionados con la recolección de basuras,
+reciclaje y veeduría ciudadana. Engativá como localidad ha 	identificado en su población muy variada quizás clasificada entre residente comercial,
+residente familiar ó transeúnte frecuente, el poco acceso que se tiene a información sobre la clasificación de basuras, los horarios de los operadores de aseo,
+ubicación de contenedores de basuras y depósitos de reciclaje o escombros (chatarrerías).
 
 ## Acerca de Vecinos Verdes
 
-La Cultura del Reciclaje es la actitud proactiva de la ciudadanía y los	organismos públicos, en establecer políticas ambientales para la recolección y el manejo de los desechos sólidos, 
-con el fin de NO contaminar las ciudades e incentivando un patrón de conducta ecológico en la colectividad.	Una aplicación web puede convertirse en una poderosa herramienta pedagógica 
-y didáctica que aproveche nuestra capacidad de aprendizaje. Por lo cual se propone una solución informática que permita vincular a los ciudadanos residentes o 
-negociantes en una comunidad virtual que permita formarse, informarse, denunciar y acceder a beneficios que sean reportados por los operadores de aseo o reciclaje 
-sobre las unidades de vivienda vinculadas a la cuenta usuario. 
+La Cultura del Reciclaje es la actitud proactiva de la ciudadanía y los	organismos públicos, en establecer políticas ambientales para la recolección y el manejo de los desechos sólidos,
+con el fin de NO contaminar las ciudades e incentivando un patrón de conducta ecológico en la colectividad.	Una aplicación web puede convertirse en una poderosa herramienta pedagógica
+y didáctica que aproveche nuestra capacidad de aprendizaje. Por lo cual se propone una solución informática que permita vincular a los ciudadanos residentes o
+negociantes en una comunidad virtual que permita formarse, informarse, denunciar y acceder a beneficios que sean reportados por los operadores de aseo o reciclaje
+sobre las unidades de vivienda vinculadas a la cuenta usuario.
 
 ## Objetivos Iniciales Vecinos Verdes
 
@@ -29,23 +29,29 @@ sobre las unidades de vivienda vinculadas a la cuenta usuario.
 
 ## Arquitectura Tecnológica Propuesta
 
-Se utilizará la arquitectura MVC, la cual nos permitirá separar los datos, la interfaz de usuario y la lógica de negocio como tres elementos independientes. 
-Realizar este patrón de diseño ofrecerá características importantes en mantenibilidad, seguridad, eficiencia en el uso y control de los recursos. El motor de bases de datos 
-MySQL y el servidor web APACHE; permite que las empresas de programación tengan la posibilidad de comenzar a desarrollar productos basados en tecnología de punta que, 
-combinados con el bajo el costo y una metodología ágil basada en el servicio al cliente, pueden llegar a ser sustancialmente competitivos frente a los productos desarrollados 
+Se utilizará la arquitectura MVC, la cual nos permitirá separar los datos, la interfaz de usuario y la lógica de negocio como tres elementos independientes.
+Realizar este patrón de diseño ofrecerá características importantes en mantenibilidad, seguridad, eficiencia en el uso y control de los recursos. El motor de bases de datos
+MySQL y el servidor web APACHE; permite que las empresas de programación tengan la posibilidad de comenzar a desarrollar productos basados en tecnología de punta que,
+combinados con el bajo el costo y una metodología ágil basada en el servicio al cliente, pueden llegar a ser sustancialmente competitivos frente a los productos desarrollados
 por empresas de mayor trayectoria. Este entorno de programación es conocido como StackLAMP (Linux, Apache, MySQL y PHP)
 
-El uso del Framework Laravel 5.4 LTS proporcionará un entorno de forma profesional, adicionando un sin número de componentes de la comunidad de Open Source como son: 
-Vagrant, Composer, Bootstrap, Jquery y demás necesarias con la finalidad de optimizar el desarrollo web manteniendo estándares de calidad. La aceptación de Laravel por la comunidad de 
+El uso del Framework Laravel 5.4 LTS proporcionará un entorno de forma profesional, adicionando un sin número de componentes de la comunidad de Open Source como son:
+Vagrant, Composer, Bootstrap, Jquery y demás necesarias con la finalidad de optimizar el desarrollo web manteniendo estándares de calidad. La aceptación de Laravel por la comunidad de
 programadores mundial lo ha posicionado entre los mejores según (SitePoint, 2017).
-No siendo la única herramienta se propone el uso de un sistema de control de versionamiento GIT o repositorio que permita ser una evidencia real de la ejecución en tiempo y 
-líneas de código de la etapa del desarrollo. Aunque parezca abrumadora la cantidad de herramientas mencionadas, su uso es práctico y su utilidad aporta a la calidad de software en 
+No siendo la única herramienta se propone el uso de un sistema de control de versionamiento GIT o repositorio que permita ser una evidencia real de la ejecución en tiempo y
+líneas de código de la etapa del desarrollo. Aunque parezca abrumadora la cantidad de herramientas mencionadas, su uso es práctico y su utilidad aporta a la calidad de software en
 diferentes aspectos de forma transversal.
 <p align="center"><img src="https://preview.ibb.co/njvqJK/stackdeveloper.png"></p>
 
-## Laravel Sponsors
+## Wireframes Vecinos Verdes WebSite
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+A través de la etapas de Analisís y Diseño, se realizo los siguientes wireframe de las funcionalidades más relevantes. Si desea ver mayor contenido sobre lo wireframe disponible, favor ingresar al siguiente link  [Patreon page](http://patreon.com/taylorotwell):
+
+<p align="center"><img src="https://preview.ibb.co/dibYaz/landingpage.png" alt="landingpage" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/ipwANe/Crear_Usuario.png" alt="Crear_Usuario" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/cCux2e/dashboard.png" alt="dashboard" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/fnzVNe/Formaci_n.png" alt="Formacion" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/b40O8K/Horarios.png" alt="Horarios" border="0"></p>
 
 - **[Vehikl](http://vehikl.com)**
 - **[Tighten Co.](https://tighten.co)**
