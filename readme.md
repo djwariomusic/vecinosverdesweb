@@ -1,4 +1,5 @@
 <p align="center"><img src="https://preview.ibb.co/cOjWaz/logoaliados.png"></p>
+<p align="center"><img src="https://ibb.co/kkoVx0"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -45,7 +46,7 @@ diferentes aspectos de forma transversal.
 
 ## Wireframes Vecinos Verdes WebSite
 
-A través de la etapas de Analisís y Diseño, se realizo los siguientes wireframe de las funcionalidades más relevantes. Si desea ver mayor contenido sobre lo wireframe disponible, favor ingresar al siguiente link  [Patreon page](http://patreon.com/taylorotwell):
+A través de la etapas de Analisís y Diseño, se realizo los siguientes wireframe de las funcionalidades más relevantes. 
 
 <p align="center"><img src="https://preview.ibb.co/dibYaz/landingpage.png" alt="landingpage" border="0"></p>
 <p align="center"><img src="https://preview.ibb.co/ipwANe/Crear_Usuario.png" alt="Crear_Usuario" border="0"></p>
@@ -53,21 +54,31 @@ A través de la etapas de Analisís y Diseño, se realizo los siguientes wirefra
 <p align="center"><img src="https://preview.ibb.co/fnzVNe/Formaci_n.png" alt="Formacion" border="0"></p>
 <p align="center"><img src="https://preview.ibb.co/b40O8K/Horarios.png" alt="Horarios" border="0"></p>
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
 
-## Contributing
+## Participantes
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## Licencias
 
-## License
+Existen varios casos de éxito donde las tecnologías Open Source han permitido a las compañías reducir los costos y acceder a servicios tercerizados los cuales no son el front del negocio, pero permitan dar valor agregado hacia el usuario o el programador. 
+Aunque existe un sin número de herramientas Open Source al momento de elegir es  importante  considerar  la  comunidad  de  programadores  que  apoyan  dicha herramienta  y  las  consideraciones  especiales  de  las  licencias  sobre  estas.  A continuación,  se  mencionará  un  listado  de  recursos  con  su  correspondiente licencia.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+  Git GNU GPL
+  PHP 7.1
+  Nginx Licencia BSD Simplificada
+  MySQL MariaDB Licencia BSD Simplificada 
+  Composer Licencia MIT
+  Node Licencia MIT
+  Memcached Licencia BSD Simplificada 
+  Bootstrap Licencia MIT
+  JQuery Licencia MIT
+  Laravel Licencia MIT
+  CKEditor Licencia MIT
+  AdminLTE Licencia MIT
+  W3 Layout Creative Commons 
+  FontAwesome GNU
+  Atom MIT Licencia
+
+También es de considerar el uso de recursos fotográficos que están sujetos a la licencia Creative Commons 
