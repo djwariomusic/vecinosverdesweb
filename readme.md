@@ -44,7 +44,7 @@ A través de la etapas de Analisís y Diseño, se realizo los siguientes wirefra
 ## Participantes
 
 <a href="https://www.linkedin.com/in/edwin-beltran-80b20641/" target="_blank">Mario Edwin Beltrán.</a><br>
-Francisco Becerra Rodriguez.
+<a href="https://www.linkedin.com/in/francisco-becerra-rodriguez-038b17145/" target="_blank">Francisco Becerra Rodriguez.</a>
 
 
 ## Licencias
