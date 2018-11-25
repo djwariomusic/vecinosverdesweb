@@ -3,8 +3,6 @@
 
 <p align="center">
 <h1>Reto: Reciclar para Respirar - Alcaldía de Engativá</h1>
-<br>
-<a href="https://laravel.com/"><img src="https://laravel-guide.readthedocs.io/en/latest/license/" alt="Licencia"></a>
 </p>
 
 ## Acerca de la Problemática
@@ -15,7 +13,7 @@ De acuerdo a lo identificado en la problemática, existe poca formación en tema
 
 La Cultura del Reciclaje es la actitud proactiva de la ciudadanía y los	organismos públicos, en establecer políticas ambientales para la recolección y el manejo de los desechos sólidos, con el fin de NO contaminar las ciudades e incentivando un patrón de conducta ecológico en la colectividad. Una aplicación web puede convertirse en una poderosa herramienta pedagógica y didáctica que aproveche nuestra capacidad de aprendizaje. Por lo cual se propone una solución informática que permita vincular a los ciudadanos residentes o negociantes en una comunidad virtual que permita formarse, informarse, denunciar y acceder a beneficios que sean reportados por los operadores de aseo o reciclaje sobre las unidades de vivienda vinculadas a la cuenta usuario.
 
-## Objetivos Iniciales Vecinos Verdes
+## Objetivos Iníciales Vecinos Verdes
 
 <ul style="list-style-type:circle">
   <li>Desarrollar un software web construido con la metodología ágil, arquitectura MVC (Modelo Vista Controlador) y diferentes herramientas Opensource expuesto en el alcance inicial de la Propuesta Tecnológica.</li>
@@ -34,20 +32,25 @@ No siendo la única herramienta se propone el uso de un sistema de control de ve
 
 ## Wireframes Vecinos Verdes WebSite
 
-A través de la etapas de Analisís y Diseño, se realizo los siguientes wireframe de las funcionalidades más relevantes. 
+A través de la etapas de Analisís y Diseño, se realizo los siguientes wireframe de las funcionalidades más relevantes. Si desea ver más wireframes, mediante el siguiente link de <a href="https://flic.kr/s/aHskEGvmSG" target="_blank">Flickr.com</a> encontrara más información.
 
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/150113091@N02/albums/72157671300703188" title="VecinosVerdes"><img src="https://farm2.staticflickr.com/1821/42762617034_060a75f6e6_z.jpg" width="464" height="640" alt="VecinosVerdes"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<p align="center"><img src="https://preview.ibb.co/dibYaz/landingpage.png" alt="landingpage" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/ipwANe/Crear_Usuario.png" alt="Crear_Usuario" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/cCux2e/dashboard.png" alt="dashboard" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/fnzVNe/Formaci_n.png" alt="Formacion" border="0"></p>
+<p align="center"><img src="https://preview.ibb.co/b40O8K/Horarios.png" alt="Horarios" border="0"></p>
+
 
 ## Participantes
 
-<a href="">Mario Edwin Beltrán.</a><br>
+<a href="https://www.linkedin.com/in/edwin-beltran-80b20641/" target="_blank">Mario Edwin Beltrán.</a><br>
 Francisco Becerra Rodriguez.
 
 
 ## Licencias
 
 Existen varios casos de éxito donde las tecnologías Open Source han permitido a las compañías reducir los costos y acceder a servicios tercerizados los cuales no son el front del negocio, pero permitan dar valor agregado hacia el usuario o el programador. 
-Aunque existe un sin número de herramientas Open Source al momento de elegir es  importante  considerar  la  comunidad  de  programadores  que  apoyan  dicha herramienta  y  las  consideraciones  especiales  de  las  licencias  sobre  estas.  A continuación,  se  mencionará  un  listado  de  recursos  con  su  correspondiente licencia.
+Aunque existe un sin número de herramientas Open Source al momento de elegir es  importante  considerar  la  comunidad  de  programadores  que  apoyan  dicha herramienta  y  las  consideraciones  especiales  de  las  licencias  sobre  estas.  A continuación,  se  mencionará  un  listado  de  recursos  con  su correspondiente licencia.
 
 <ul style="list-style-type:circle">
   <li>Git GNU GPL</li>
