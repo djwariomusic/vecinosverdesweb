@@ -5,11 +5,11 @@
 <h1>Reto: Reciclar para Respirar - Alcaldía de Engativá</h1>
 <ul>
 <li><img src="https://i.ibb.co/hm82dTh/github.png" alt="github" border="0"> <a href="https://djwariomusic.github.io/vecinosverdesweb/docs/">Link GitHub Download</a></li>
-<li><img src="https://i.ibb.co/8sZnmQS/site.png" alt="site" border="0"> <a href="#">Link LandingPage</a></li>
-<li><img src="https://i.ibb.co/X24wgdZ/computer.png" alt="computer" border="0"> <a href="#">Link Aplicación Web Admin - User</a></li>
-<li><img src="https://i.ibb.co/QkNSVLT/smartphone.png" alt="smartphone" border="0"> <a href="#">Link APP User</a></li>
-<li><img src="https://i.ibb.co/BnXZSn8/mysql.png" alt="mysql" border="0"> <a href="https://github.com/djwariomusic/vecinosverdesweb/blob/master/requeriment/vecinosverdesbd%20(1).sql">Link SQL Script</a></li>
-<li><img src="https://i.ibb.co/g9BjqV3/exchange.png" alt="exchange" border="0">	 <a href="https://github.com/djwariomusic/vecinosverdesweb/tree/master/database/migrations">Migraciones</a></li>
+<li><a href="#">Link LandingPage</a></li>
+<li><a href="#">Link Aplicación Web Admin - User</a></li>
+<li><a href="#">Link APP User</a></li>
+<li><a href="https://github.com/djwariomusic/vecinosverdesweb/blob/master/requeriment/vecinosverdesbd%20(1).sql">Link SQL Script</a></li>
+<li><a href="https://github.com/djwariomusic/vecinosverdesweb/tree/master/database/migrations">Migraciones</a></li>
 </ul>
 </p>
 
